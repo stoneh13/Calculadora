@@ -11,6 +11,11 @@ pipeline{
                 sh './gradlew test'
             }
         }
+        stage("Build gradle"){
+            steps{
+                sh './gradlew build'
+            }
+        }
         stage("Construir Docker"){
             steps{
                 sudo "docker build -t localhost:6000/calculadora . "
