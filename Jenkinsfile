@@ -28,7 +28,7 @@ pipeline{
         }
         stage("Parar contenedor") {
             when {
-                expression { sh script: '''if [ -z $(docker ps -f name=calculadora2 -q) ]; then true; else false; fi''', returnStatus: true
+                expression { sh script: '''if [ -z $(sudo docker ps -f name=calculadora2 -q) ]; then true; else false; fi''', returnStatus: true
                   }
               }
             steps {
@@ -37,7 +37,7 @@ pipeline{
         }
          stage("Borrar contenedor") {
             when {
-                expression { sh script: '''if [ -z $(docker ps -a name=calculadora2 -q) ]; then true; else false; fi''', returnStatus: true
+                expression { sh script: '''if [ -z $(sudo docker ps -a name=calculadora2 -q) ]; then true; else false; fi''', returnStatus: true
                   }
               }
             steps {
