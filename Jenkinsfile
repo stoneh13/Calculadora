@@ -52,7 +52,7 @@ pipeline{
         } 
         stage("Lanzar calculadora5"){
               steps{
-                  ansible-playbook playbook.yml
+                 sh "sudo ansible-playbook playbook.yml"
               }
         }
     }
