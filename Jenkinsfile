@@ -37,7 +37,7 @@ pipeline{
         }
          stage("Borrar contenedor") {
             when {
-                expression { sh script: '''if [ -z $(sudo docker ps -a name=calculadora2 -q) ]; then true; else false; fi''', returnStatus: true
+                expression { sh script: '''if [ -z $(sudo docker ps -f -a name=calculadora2 -q) ]; then true; else false; fi''', returnStatus: true
                   }
               }
             steps {
