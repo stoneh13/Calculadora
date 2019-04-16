@@ -1,4 +1,4 @@
-- hosts: grupo1 
+- hosts: grupo3
   become: yes
   become_method: sudo
   tasks:
